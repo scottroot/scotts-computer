@@ -57,7 +57,7 @@ a.desktop_icons:focus {
   box-shadow: 1px 1px #444444;
   /*overflow: hidden;*/
   overflow-x: hidden;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   z-index: inherit;
 }
 
@@ -66,6 +66,10 @@ a.desktop_icons:focus {
 }
 #window-browser:active, #window-contact:focus {
   z-index: 9991;
+}
+
+#window-readme {
+  display:block;
 }
 .noh { /*no highlight text*/
   -webkit-touch-callout: none; /* iOS Safari */
@@ -81,7 +85,7 @@ a.desktop_icons:focus {
   width: 490px;
   height: 320px;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
   background-color:#ffffff;
   margin-left: 4px;
   border-left: 1px solid #0a0a0a;
