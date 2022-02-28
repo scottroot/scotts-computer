@@ -70,6 +70,7 @@ a.desktop_icons:focus {
 
 #window-readme {
   display:block;
+  top:75px;
 }
 .noh { /*no highlight text*/
   -webkit-touch-callout: none; /* iOS Safari */
