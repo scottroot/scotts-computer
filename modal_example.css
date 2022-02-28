@@ -70,8 +70,13 @@ a.desktop_icons:focus {
 
 #window-readme {
   display:block;
-  top:75px !important;
+  top:75px;
 }
+
+#window-readme:active, #window-contact:focus {
+  z-index: 9992;
+}
+
 .noh { /*no highlight text*/
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

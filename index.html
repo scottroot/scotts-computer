@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="src/js/desktop_mouse_drag.js"></script>
-
+    <script type="text/javascript" src="src/js/jquery.draggableTouch.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
@@ -199,10 +199,14 @@
 </div> <!-- /.container -->
 <!-- #################### END BODY CONTENT #################################### -->
 
-
+<script>
+    let z = 9000;
+</script>
 <script>
 $( "#open-contact-window" ).dblclick(function() {
     $('#window-contact').show();
+    $('#window-contact').css("z-index", z);
+    z++;
     $("#window-contact").data({'originalLeft': $("#window-contact").css('left'),
         'origionalTop': $("#window-contact").css('top')});
     });
@@ -211,7 +215,7 @@ $( "#close-contact-window" ).click(function() {
     $("#window-contact").css({'left': $("#window-contact").data('originalLeft'),'top': $("#window-contact").data('origionalTop')});
     });
 $( function() {
-        $( "#window-contact " ).draggable({handle:"#contact-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-contact " ).draggableTouch({handle:"#contact-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>
@@ -219,6 +223,8 @@ $( function() {
 <script>
 $( "#open-browser-window" ).dblclick(function() {
     $('#window-browser').show();
+    $('#window-browser').css("z-index", z);
+    z++;
     $("#window-browser").data({'originalLeft': $("#window-browser").css('left'),
         'origionalTop': $("#window-browser").css('top')});
     });
@@ -227,7 +233,7 @@ $( "#close-browser-window" ).click(function() {
     $("#window-browser").css({'left': $("#window-browser").data('originalLeft'),'top': $("#window-browser").data('origionalTop')});
     });
 $( function() {
-        $( "#window-browser " ).draggable({handle:"#browser-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-browser " ).draggableTouch({handle:"#browser-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-browser").addEventListener("click", bringToFront);
 </script>
@@ -236,6 +242,8 @@ $( function() {
 <script>
 $( "#open-readme-window" ).dblclick(function() {
     $('#window-readme').show();
+    $('#window-readme').css("z-index", z);
+    z++;
     $("#window-readme").data({'originalLeft': $("#window-readme").css('left'),
         'origionalTop': $("#window-readme").css('top')});
     });
@@ -244,12 +252,20 @@ $( "#close-readme-window" ).click(function() {
     $("#window-readme").css({'left': $("#window-readme").data('originalLeft'),'top': $("#window-readme").data('origionalTop')});
     });
 $( function() {
-        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-readme " ).draggableTouch({handle:"#readme-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>
 
 
+<script>
+    // let z = 9000;
+    $('.window').on('mousedown', function(e) {
+    $(this).css("z-index", z); // does not run a DOM query
+        z++;
+});
+
+</script>
 </body>
     
 </html>
