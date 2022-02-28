@@ -215,7 +215,7 @@ $( "#close-contact-window" ).click(function() {
     $("#window-contact").css({'left': $("#window-contact").data('originalLeft'),'top': $("#window-contact").data('origionalTop')});
     });
 $( function() {
-        $( "#window-contact " ).draggable({handle:"#contact-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-contact " ).draggable({handle:"#contact-handle", cancel: ".modalX", containment: '.desktop-content'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>
@@ -233,7 +233,7 @@ $( "#close-browser-window" ).click(function() {
     $("#window-browser").css({'left': $("#window-browser").data('originalLeft'),'top': $("#window-browser").data('origionalTop')});
     });
 $( function() {
-        $( "#window-browser " ).draggable({handle:"#browser-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-browser " ).draggable({handle:"#browser-handle", cancel: ".modalX", containment: '.desktop-content'});
     });
 // document.getElementById("#window-browser").addEventListener("click", bringToFront);
 </script>
@@ -252,7 +252,7 @@ $( "#close-readme-window" ).click(function() {
     $("#window-readme").css({'left': $("#window-readme").data('originalLeft'),'top': $("#window-readme").data('origionalTop')});
     });
 $( function() {
-        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: ".modalX", containment: '.desktop-content'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>

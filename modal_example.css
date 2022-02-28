@@ -1,7 +1,8 @@
 .desktop-content {
   /*width: 100%;*/
-  /*height: 100%;*/
+  height: 100%;
   /*height: 300px;*/
+  padding: 0px !important;
   display: block;
   position: relative;
 }
@@ -48,6 +49,7 @@ a.desktop_icons:focus {
 .window {
   position: fixed;
   /*margin-left: 20%;*/
+  display: inline;
   display: none;
   width: 500px;
   height: 350px;
@@ -61,15 +63,25 @@ a.desktop_icons:focus {
   z-index: inherit;
 }
 
-#window-contact:active, #window-contact:focus {
-  z-index: 9990;
+/*#window-contact:active, #window-contact:focus {*/
+/*  z-index: 9990;*/
+/*}*/
+
+#window-contact {
+  position:absolute;
+  left:10px;
+  top:85px;
 }
-#window-browser:active, #window-contact:focus {
-  z-index: 9991;
+#window-browser {
+  position:absolute;
+  left:20px;
+  top:95px;
 }
 
 #window-readme {
   display:block;
+  position:absolute;
+  left:30px;
   top:75px;
   max-width:80% !important;
 }

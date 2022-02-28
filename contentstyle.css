@@ -28,6 +28,7 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 100%;
+    overflow: hidden;
 }
 .navpad {
     padding: 0px !important;
@@ -77,6 +78,9 @@ body{
     /*font-size:12px;*/
 }
 
+.navbar {
+    z-index:20000;
+}
 .mnavbar{ 
     background-color: #dddddd;
     /*border: solid 1px black;*/
