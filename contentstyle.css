@@ -61,7 +61,7 @@ body{
 .socialShare img {
     margin: 1 10 1 0px;
     padding: 0px;
-    height: 24px;
+    height: 20px !important;
     vertical-align: middle;
 }
 
