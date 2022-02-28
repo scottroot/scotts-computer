@@ -12,8 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="src/js/desktop_mouse_drag.js"></script>
-    <script type="text/javascript" src="src/js/jquery.draggableTouch.js"></script>
+<!--    <script type="text/javascript" src="src/js/desktop_mouse_drag.js"></script>-->
+    <script type="text/javascript" src="src/js/jquery.ui.touch-punch.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
@@ -215,7 +215,7 @@ $( "#close-contact-window" ).click(function() {
     $("#window-contact").css({'left': $("#window-contact").data('originalLeft'),'top': $("#window-contact").data('origionalTop')});
     });
 $( function() {
-        $( "#window-contact " ).draggableTouch({handle:"#contact-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-contact " ).draggable({handle:"#contact-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>
@@ -233,7 +233,7 @@ $( "#close-browser-window" ).click(function() {
     $("#window-browser").css({'left': $("#window-browser").data('originalLeft'),'top': $("#window-browser").data('origionalTop')});
     });
 $( function() {
-        $( "#window-browser " ).draggableTouch({handle:"#browser-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-browser " ).draggable({handle:"#browser-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-browser").addEventListener("click", bringToFront);
 </script>
@@ -252,7 +252,7 @@ $( "#close-readme-window" ).click(function() {
     $("#window-readme").css({'left': $("#window-readme").data('originalLeft'),'top': $("#window-readme").data('origionalTop')});
     });
 $( function() {
-        $( "#window-readme " ).draggableTouch({handle:"#readme-handle", cancel: ".modalX", containment: '.container'});
+        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: ".modalX", containment: '.container'});
     });
 // document.getElementById("#window-contact").addEventListener("click", bringToFront);
 </script>
