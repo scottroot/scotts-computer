@@ -4,7 +4,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
 
     <link rel="stylesheet" href="src/css/navbar.css">
-
+    <link rel="stylesheet" href="src/css/desktop.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
@@ -23,15 +23,10 @@ font-style: normal;
 font-weight: normal;
 src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 }
-.desktop-container {
-    padding: 0px;
-}
-.desktop {
-    background: #63639c;
-    height: calc(100% - 24px);
-}
+
 .window {
     background-color: #cccccc;
+    display: none;
     /*width: 100%;*/
     /*height: 350px;*/
     border: 1px solid #222222;
@@ -40,7 +35,14 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     box-shadow: 1px 2px #222222;
     /*min-width: 500px;*/
     height: min-content;
+    /*width: 400px;*/
+    z-index: 1000;
+}
+#window-readme {
     width: 400px;
+}
+#window-contact {
+    width: 350px;
 }
 .window-header {
     border-top: 1px solid #fdfdfd;
@@ -122,14 +124,14 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
                 url("src/img/title_window_bars_left.png") right center no-repeat,
                 #cccccc;
     /*background-color: #cccccc;*/
-    background-size: contain;
+    background-size: auto 14px, auto 14px;
     background-origin: padding-box;
     vertical-align: middle;
     display: inline;
     height: 20px;
     margin: 0px;
     padding: 2px 4px 2px 4px;
-    font-size: .5rem;
+    font-size: .7rem;
     font-family: "Chicago Plain";
 }
 
@@ -174,12 +176,30 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 .default-pointer {
     cursor: default;
 }
+
+.desktop_icons {
+  float: right !important;
+  display: block;
+  width: 75;
+  text-align: center;
+  /*background-color: yellow;*/
+  margin: 20px;
+  cursor: default;
+}
+
+
+@media (min-width: 295px) {  
+  #window-readme {width: 5000px;left: 0px}
+  span pre {font-size:.3rem;} /*1rem = 16px*/
+}
 @media (min-width: 400px) {  
+  #window-readme {width: 1000px;left: 100px}
   span pre {font-size:.3rem;} /*1rem = 16px*/
 }
 @media (min-width: 768px) {  
   span pre {font-size:.6rem;} /*1rem = 16px*/
-  .window {width: 550px;}
+  #window-readme {width: 550px;left: 350px}
+  #window-contact {width: 350px;left: 200px;top: 250px}
 }
 
 
@@ -237,17 +257,17 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 <div class="container-fluid desktop d-flex justify-content-center pt-3">
 
 <!-- ###########################
-       WINDOW
+       Readme WINDOW
 ################################ -->
 <div class="window d-block p-0 w-md-50" id="window-readme">
         <div class="window-header d-flex justify-content-between m-0" id="readme-handle">
                 <div class="d-flex">
-                    <btn class="square_button mr-1" id="window-readme-close"></btn>
+                    <btn class="sqbtn square_button mr-1" id="window-readme-close"></btn>
                 </div>
                 <div class="flex-grow-1 window-header-center"></div>
                 <div class="d-inline-flex align-items-stretch justify-content-end ml-1">
-                        <btn class="square_button_maximize mr-1" id="window-readme-max"></btn>
-                        <btn class="square_button_minimize" id="window-readme-min"></btn>
+                        <btn class="sqbtn square_button_maximize mr-1" id="window-readme-max"></btn>
+                        <btn class="sqbtn square_button_minimize" id="window-readme-min"></btn>
                 </div>
         </div>
         <div class="window-header-title d-block mb-0" id="readme-handle">
@@ -288,12 +308,62 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
             </div>
         </div>
 
+</div> <!-- /.window -->
 
 
+<!-- ###########################
+       Contact WINDOW
+################################ -->
+<div class="window p-0 w-75" id="window-contact">
+        <div class="window-header d-flex justify-content-between m-0" id="contact-handle">
+                <div class="d-flex">
+                    <btn class="square_button mr-1 sqbtn" id="window-contact-close"></btn>
+                </div>
+                <div class="flex-grow-1 window-header-center"></div>
+                <div class="d-inline-flex align-items-stretch justify-content-end ml-1">
+                        <btn class="square_button_maximize mr-1 sqbtn" id="window-contact-max"></btn>
+                        <btn class="square_button_minimize sqbtn" id="window-contact-min"></btn>
+                </div>
+        </div>
+        <div class="window-header-title d-block mb-0" id="readme-handle">
+                    <span class="vertical-helper"></span><p class="no-select">Contact</p>
+        </div>
 
 
-</div> <!-- /.w -->
-<!-- ################################## -->
+        <div class="window-content" id="window-content-contact">
+            <div class="window-content-body">
+                <div class="col-12" style="width:350px;">
+                    <h5>Email:</h5><p>hendrix_s@protonmail.com</p>
+                    <h5>Arweave Weve mail:</h5><p class="small">Vv-zWdvpQoe7Wk_wAChqcI7l_x5ZD3AqbT7bCfmL6CI </p>
+                </div>
+            </div>
+        </div>
+
+</div> <!-- /.window -->
+
+<!-- ###########################
+       DESKTOP ICONS
+################################ -->
+    <div class="w-100">
+        <div class="row justify-content-end">
+        <a class="desktop_icons noh" id="open-contact-window" tabindex="0">
+                <img src="src/img/dt_contact.png">
+            <p>Contact</p>
+        </a>
+        </div>
+        <div class="row justify-content-end">
+        <a class="desktop_icons noh" id="open-browser-window" tabindex="1">
+                <img src="src/img/dt_browser.png">
+            <p>Browser</p>
+        </a>
+        </div>
+        <div class="row justify-content-end">
+        <a class="desktop_icons noh" id="open-readme-window" tabindex="2">
+                <img src="src/img/dt_notepad.png">
+            <p>ReadMe</p>
+        </a>
+        </div>
+    </div>
 </div>    
 </div>
 
@@ -305,8 +375,8 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 </script>
 <script>
 $( "#open-contact-window" ).dblclick(function() {
+    $('#window-contact').css("z-index", 9000);
     $('#window-contact').show();
-    $('#window-contact').css("z-index", z);
     z++;
     $("#window-contact").data({'originalLeft': $("#window-contact").css('left'),
         'origionalTop': $("#window-contact").css('top')});
@@ -343,14 +413,17 @@ $( function() {
 <script>
 $( "#open-readme-window" ).dblclick(function() {
         $('#window-readme').show();
+        document.getElementById("window-readme").style.visibility = "visible";
         $('#window-readme').css("z-index", z);
         z++;
         $("#window-readme").data({'originalLeft': $("#window-readme").css('left'),
             'origionalTop': $("#window-readme").css('top')});
         });
+</script>
+<script>
 $( "#window-readme-close" ).click(function() {
     $('#window-readme').hide();
-    $("#window-readme").css({'left': $("#window-readme").data('originalLeft'),'top': $("#window-readme").data('origionalTop')});
+    document.getElementById("window-readme").style.visibility = "hidden";
     });
 $( "#window-readme-min" ).click(function() {
     $('#window-content-readme').hide();
@@ -370,11 +443,40 @@ $( function() {
 
 
 <script>
+$( "#window-contact-close" ).click(function() {
+    $('#window-contact').hide();
+    document.getElementById("window-contact").style.visibility = "hidden";
+    });
+$( "#window-contact-min" ).click(function() {
+    $('#window-content-contact').hide();
+    });
+$( "#window-contact-max" ).click(function() {
+    $('#window-content-contact').show();
+    });
+</script>
+<script>
+    $( function() {
+        $( "#window-contact" ).draggable({handle:".window-header-title", cancel: "#window-readme-close", containment: '.desktop-container'});
+    });
+    </script>
+
+
+
+<script>
     // let z = 9000;
     $('.window').on('mousedown', function(e) {
     $(this).css("z-index", z); // does not run a DOM query
-        z++;
+    z++;
 });
+//     $('.window-header').on('mousedown', function(e) {
+//     $(this).css("z-index", z); // does not run a DOM query
+//     z++;
+// });
+//     $('.sqbtn').on('mousedown', function(e) {
+//     $(this).css("z-index", z); // does not run a DOM query
+//     z++;
+// });
+    // z++;
 
 </script>
 
