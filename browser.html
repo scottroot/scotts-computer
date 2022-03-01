@@ -3,14 +3,16 @@
     <!-- <meta name="viewport" content="width=500, initial-scale=1"> -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/navbar.css">
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="src/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="src/js/nav_clock.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 
     
 
@@ -21,6 +23,13 @@ font-style: normal;
 font-weight: normal;
 src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 }
+.desktop-container {
+    padding: 0px;
+}
+.desktop {
+    background: #63639c;
+    height: calc(100% - 24px);
+}
 .window {
     background-color: #cccccc;
     /*width: 100%;*/
@@ -30,6 +39,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     /*overflow: hidden;*/
     box-shadow: 1px 2px #222222;
     /*min-width: 500px;*/
+    height: min-content;
 }
 .window-header {
     border-top: 1px solid #fdfdfd;
@@ -134,10 +144,10 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 }
 .window-content-body {
     background-color: #ffffff;
-    display: flex;
-  flex-flow: column;
+    /*display: flex;*/
+  /*flex-flow: column;*/
   /*height: 100%;*/
-  height: calc(100% - 22px);
+  /*height: calc(100% - 22px);*/
   border: 1px solid #000000;
   padding: 10px 15px;
 }
@@ -169,6 +179,8 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 @media (min-width: 700px) {  
   span pre {font-size:.75rem;} /*1rem = 16px*/
 }
+
+
 </style>
 </head>
 
@@ -219,27 +231,32 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
         </div>
 </nav>  
 
+<div class="desktop-container">
+<div class="container-fluid desktop d-flex justify-content-center pt-3">
 
-<div class="container-fluid d-flex justify-content-center pt-3">
-<div class="window col-sm-5 p-0" id="window-readme">
-        <div class="window-header d-flex justify-content-between m-0">
+<!-- ###########################
+       WINDOW
+################################ -->
+<div class="window d-block p-0 w-md-50" id="window-readme">
+        <div class="window-header d-flex justify-content-between m-0" id="readme-handle">
                 <div class="d-flex">
-                    <btn class="square_button mr-1"></btn>
+                    <btn class="square_button mr-1" id="window-readme-close"></btn>
                 </div>
                 <div class="flex-grow-1 window-header-center"></div>
                 <div class="d-inline-flex align-items-stretch justify-content-end ml-1">
-                        <btn class="square_button_maximize mr-1"></btn>
-                        <btn class="square_button_minimize "></btn>
+                        <btn class="square_button_maximize mr-1" id="window-readme-max"></btn>
+                        <btn class="square_button_minimize" id="window-readme-min"></btn>
                 </div>
         </div>
-        <div class="window-header-title mb-0">
-                    <span class="vertical-helper"></span><p>ReadMe.nfo</p>
+        <div class="window-header-title mb-0" id="readme-handle">
+                    <span class="vertical-helper"></span><p class="no-select">ReadMe</p>
         </div>
 
 
-        <div class="window-content">
+        <div class="window-content" id="window-content-readme">
             <div class="window-content-body" style="overflow:hidden;">
-                 <span > <!-- style="font-size:.5rem; overflow:hidden;font-family:'Monaco';text-align:left;line-height:9px" -->
+                <img class="d-block d-lg-none" src="src/img/ascii_readme_mobile.png" height="400px">
+                 <span class="d-none d-lg-block"> <!-- style="font-size:.5rem; overflow:hidden;font-family:'Monaco';text-align:left;line-height:9px" -->
 <pre class="mb-1">
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #   ___   ___  ___  _____  _____  _  ___    ___  ___   __  __  ___  _   _  _____  ___  ___    #
@@ -276,7 +293,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 </div> <!-- /.w -->
 <!-- ################################## -->
 </div>    
-
+</div>
 
 
 
@@ -321,23 +338,33 @@ $( function() {
 </script>
 
 
-<script>
+<!-- <script>
 $( "#open-readme-window" ).dblclick(function() {
-    $('#window-readme').show();
-    $('#window-readme').css("z-index", z);
-    z++;
-    $("#window-readme").data({'originalLeft': $("#window-readme").css('left'),
-        'origionalTop': $("#window-readme").css('top')});
-    });
-$( "#close-readme-window" ).click(function() {
+        $('#window-readme').show();
+        $('#window-readme').css("z-index", z);
+        z++;
+        $("#window-readme").data({'originalLeft': $("#window-readme").css('left'),
+            'origionalTop': $("#window-readme").css('top')});
+        });
+$( "#window-readme-close" ).click(function() {
     $('#window-readme').hide();
     $("#window-readme").css({'left': $("#window-readme").data('originalLeft'),'top': $("#window-readme").data('origionalTop')});
     });
-$( function() {
-        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: ".modalX", containment: '.desktop-content'});
+$( "#window-readme-min" ).click(function() {
+    $('#window-content-readme').hide();
     });
-// document.getElementById("#window-contact").addEventListener("click", bringToFront);
-</script>
+$( "#window-readme-max" ).click(function() {
+    $('#window-content-readme').show();
+    });
+$( function() {
+        $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: "#window-readme-close", containment: '.desktop'});
+    });
+</script> -->
+<script>
+    $( function() {
+        $( "#window-readme" ).draggable({handle:".window-header-title", cancel: "#window-readme-close", containment: '.desktop-container'});
+    });
+    </script>
 
 
 <script>
