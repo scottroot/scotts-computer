@@ -40,6 +40,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     box-shadow: 1px 2px #222222;
     /*min-width: 500px;*/
     height: min-content;
+    width: 400px;
 }
 .window-header {
     border-top: 1px solid #fdfdfd;
@@ -110,7 +111,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     /*margin: 0px;*/
     top: 0px;
     /*padding-top: 1px;*/
-    width: inherit;
+    width: 100%;
     text-align: center;
     vertical-align: middle;
     position: absolute;
@@ -174,10 +175,11 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     cursor: default;
 }
 @media (min-width: 400px) {  
-  span pre {font-size:.41rem;} /*1rem = 16px*/
+  span pre {font-size:.3rem;} /*1rem = 16px*/
 }
-@media (min-width: 700px) {  
-  span pre {font-size:.75rem;} /*1rem = 16px*/
+@media (min-width: 768px) {  
+  span pre {font-size:.6rem;} /*1rem = 16px*/
+  .window {width: 550px;}
 }
 
 
@@ -211,7 +213,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
         </ul>
 
 
-        <div class="socialLinks"> <!-- d-none d-sm-block -->
+        <div class="socialLinks d-none d-sm-block">
             <!-- <div class="socialLinks"> -->
                 <a class="mr-2" href="https://twitter.com/scottz_thoughtz">
                     <span class="vertical-helper social-link"></span><img src="src/img/ic_twitter.png" alt="" height="16px">
@@ -231,7 +233,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
         </div>
 </nav>  
 
-<div class="desktop-container">
+<div class="desktop-container p-0 overflow-hidden">
 <div class="container-fluid desktop d-flex justify-content-center pt-3">
 
 <!-- ###########################
@@ -248,15 +250,15 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
                         <btn class="square_button_minimize" id="window-readme-min"></btn>
                 </div>
         </div>
-        <div class="window-header-title mb-0" id="readme-handle">
+        <div class="window-header-title d-block mb-0" id="readme-handle">
                     <span class="vertical-helper"></span><p class="no-select">ReadMe</p>
         </div>
 
 
         <div class="window-content" id="window-content-readme">
             <div class="window-content-body" style="overflow:hidden;">
-                <img class="d-block d-lg-none" src="src/img/ascii_readme_mobile.png" height="400pxs">
-                 <span class="d-none d-lg-block"> <!-- style="font-size:.5rem; overflow:hidden;font-family:'Monaco';text-align:left;line-height:9px" -->
+                <img class="d-block d-md-none" src="src/img/ascii_readme_mobile.png" width="100%">
+                 <span class="d-none d-md-block"> <!-- style="font-size:.5rem; overflow:hidden;font-family:'Monaco';text-align:left;line-height:9px" -->
 <pre class="mb-1">
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #   ___   ___  ___  _____  _____  _  ___    ___  ___   __  __  ___  _   _  _____  ___  ___    #
@@ -338,7 +340,7 @@ $( function() {
 </script>
 
 
-<!-- <script>
+<script>
 $( "#open-readme-window" ).dblclick(function() {
         $('#window-readme').show();
         $('#window-readme').css("z-index", z);
@@ -359,7 +361,7 @@ $( "#window-readme-max" ).click(function() {
 $( function() {
         $( "#window-readme " ).draggable({handle:"#readme-handle", cancel: "#window-readme-close", containment: '.desktop'});
     });
-</script> -->
+</script>
 <script>
     $( function() {
         $( "#window-readme" ).draggable({handle:".window-header-title", cancel: "#window-readme-close", containment: '.desktop-container'});
