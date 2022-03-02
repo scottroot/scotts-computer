@@ -1,0 +1,124 @@
+/*@media (min-width: 295px) {  
+  #window-readme {width: 5000px;left: 0px}
+  span pre {font-size:.3rem;}
+}
+@media (min-width: 400px) {  
+  #window-readme {width: 1000px;left: 100px}
+  span pre {font-size:.3rem;} 
+@media (min-width: 768px) {  
+  span pre {font-size:.6rem;} 
+  #window-readme {max-width: 80%;}
+  #window-contact {width: 350px;left: 200px;top: 250px}
+}*/
+
+.window {
+    background-color: #cccccc;
+    display: none;
+    width: 100%;
+    min-width: 300px !important;
+    /*height: 350px;*/
+    border: 1px solid #222222;
+    position: relative;
+    /*overflow: hidden;*/
+    box-shadow: 1px 2px #222222;
+    /*min-width: 500px;*/
+    height: min-content;
+    z-index: 1000;
+    position: absolute;
+}
+
+.window-header {
+    height: 20px !important;
+    position: relative;
+    border-top: 1px solid #fdfdfd;
+    border-left: 1px solid #fdfdfd;
+    border-right: 1px solid #999999;
+    padding: 2px;
+    padding-bottom: 2px;
+    background-clip: padding-box;
+    vertical-align: middle;
+    text-align: center;
+    align-items: stretch
+}
+.vr {
+    background-color: #cccccc;
+    width: 0px;
+    margin: 0px 1px;
+}
+
+.square_button                  {background: url("../img/atom_main.png") center center no-repeat;}
+.square_button:active           {background: url("../img/atom_main_active.png") center center no-repeat;}
+.square_button_maximize         {background: url("../img/atom_maximize.png") center center no-repeat;}
+.square_button_maximize:active  {background: url("../img/atom_maximize_active.png") center center no-repeat;}
+.square_button_minimize         {background: url("../img/atom_minimize.png") center center no-repeat;}
+.square_button_minimize:active  {background: url("../img/atom_minimize_active.png") center center no-repeat;}
+
+.square_button,
+.square_button_maximize,
+.square_button_minimize {
+    z-index:10000;
+    background-size: contain;
+    height: 100% !important;
+    aspect-ratio: 1 !important;
+    display: inline-flex;
+}
+
+.window-header-center {
+    background: url("../img/title_window_bars_left.png") left center no-repeat,
+                url("../img/title_window_bars_right.png") right center no-repeat,
+                url("../img/title_window_bars_center.png") center center repeat-x;
+    background-size: contain;
+}
+
+.window-header-title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: top;
+}
+.window-header-title p {
+    background: url("../img/title_window_bars_right.png") left top no-repeat,
+                url("../img/title_window_bars_left.png") right top no-repeat,
+                #cccccc;
+    background-size: contain;
+    background-origin: padding-box;
+    position: relative;
+    /*display: inline-flex;*/
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 3px;
+    font-size: 80%;
+    line-height: 70% !important;
+    text-align: center;
+
+
+    
+
+    font-family: "Chicago Plain";
+}
+
+.window-content {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    padding: 0px 2px 2px 2px;
+    border-left: 1px solid #fdfdfd;
+    border-right: 1px solid #999999;
+}
+.window-content-body {
+    background-color: #ffffff;
+    display: flex;
+  /*flex-flow: column;*/
+  /*height: 100%;*/
+  /*width: 100%px;*/
+  /*height: 100%px;*/
+  /*height: calc(100% - 22px);*/
+  border: 1px solid #000000;
+  padding: 10px 15px;
+}

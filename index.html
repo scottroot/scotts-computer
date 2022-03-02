@@ -1,8 +1,9 @@
 <html>
 <head>
     <!-- <meta name="viewport" content="width=500, initial-scale=1"> -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
-
+    <meta content="width=device-width, initial-scale=1.2, maximum-scale=1, user-scalable=no" name="viewport" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="src/css/navbar.css">
     <link rel="stylesheet" href="src/css/desktop.css">
 
@@ -11,7 +12,6 @@
     <script type="text/javascript" src="src/js/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="src/js/nav_clock.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
     
@@ -37,6 +37,7 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
     height: min-content;
     /*width: 400px;*/
     z-index: 1000;
+    position: absolute;
 }
 #window-readme {
     width: 400px;
@@ -204,6 +205,12 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 
 
 </style>
+
+<script>
+  $( function() {
+    $( "#resizable" ).resizable();
+  } );
+  </script>
 </head>
 
 
@@ -341,32 +348,65 @@ src: local('Chicago Plain'), url('src/Chicago.woff') format('woff');
 
 </div> <!-- /.window -->
 
+
+<!-- ###########################
+       Browser WINDOW
+################################ -->
+<div class="window p-0 w-75" id="window-browser">
+        <div class="window-header d-flex justify-content-between m-0" id="browser-handle">
+                <div class="d-flex">
+                    <btn class="square_button mr-1 sqbtn" id="window-browser-close"></btn>
+                </div>
+                <div class="flex-grow-1 window-header-center"></div>
+                <div class="d-inline-flex align-items-stretch justify-content-end ml-1">
+                        <btn class="square_button_maximize mr-1 sqbtn" id="window-browser-max"></btn>
+                        <btn class="square_button_minimize sqbtn" id="window-browser-min"></btn>
+                </div>
+        </div>
+        <div class="window-header-title d-block mb-0" id="readme-handle">
+                    <span class="vertical-helper"></span><p class="no-select">Contact</p>
+        </div>
+
+
+        <div class="window-content" id="window-content-browser">
+            <div class="window-content-body">
+                <div class="col-6"  style="height:400px; overflow:scroll;">
+                    <a class="twitter-timeline" data-width="350" data-dnt="true" href="https://twitter.com/scottz_thoughtz?ref_src=twsrc%5Etfw">Tweets by scottz_thoughtz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+</div> <!-- /.window -->
+
+
 <!-- ###########################
        DESKTOP ICONS
 ################################ -->
     <div class="w-100">
         <div class="row justify-content-end">
         <a class="desktop_icons noh" id="open-contact-window" tabindex="0">
-                <img src="src/img/dt_contact.png">
+                <img src="src/img/dt_contact.png" height="50px">
             <p>Contact</p>
         </a>
         </div>
         <div class="row justify-content-end">
         <a class="desktop_icons noh" id="open-browser-window" tabindex="1">
-                <img src="src/img/dt_browser.png">
+                <img src="src/img/dt_browser.png" height="50px">
             <p>Browser</p>
         </a>
         </div>
         <div class="row justify-content-end">
         <a class="desktop_icons noh" id="open-readme-window" tabindex="2">
-                <img src="src/img/dt_notepad.png">
+                <img src="src/img/dt_readme.png" height="50px">
             <p>ReadMe</p>
         </a>
         </div>
     </div>
 </div>    
 </div>
-
 
 
 
@@ -410,6 +450,8 @@ $( function() {
 </script>
 
 
+
+<!-- ################### README SCRIPTS ######################--> 
 <script>
 $( "#open-readme-window" ).dblclick(function() {
         $('#window-readme').show();
@@ -441,7 +483,7 @@ $( function() {
     });
     </script>
 
-
+<!-- ################### CONTACT SCRIPTS ######################--> 
 <script>
 $( "#window-contact-close" ).click(function() {
     $('#window-contact').hide();
@@ -459,6 +501,26 @@ $( "#window-contact-max" ).click(function() {
         $( "#window-contact" ).draggable({handle:".window-header-title", cancel: "#window-readme-close", containment: '.desktop-container'});
     });
     </script>
+
+
+<script>
+$( "#window-browser-close" ).click(function() {
+    $('#window-browser').hide();
+    document.getElementById("window-browser").style.visibility = "hidden";
+    });
+$( "#window-browser-min" ).click(function() {
+    $('#window-content-browser').hide();
+    });
+$( "#window-browser-max" ).click(function() {
+    $('#window-content-browser').show();
+    });
+</script>
+<script>
+    $( function() {
+        $( "#window-browser" ).draggable({handle:".window-header-title", cancel: "#window-readme-close", containment: '.desktop-container'});
+    });
+    </script>
+
 
 
 
