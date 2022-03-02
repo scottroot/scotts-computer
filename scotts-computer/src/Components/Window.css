@@ -14,7 +14,7 @@
 .window {
     background-color: #cccccc;
     display: none;
-    width: 100%;
+    /*width: 100%;*/
     min-width: 300px !important;
     /*height: 350px;*/
     border: 1px solid #222222;
@@ -54,8 +54,11 @@
 .square_button_minimize:active  {background: url("../img/atom_minimize_active.png") center center no-repeat;}
 
 .square_button,
+.square_button:active,
 .square_button_maximize,
-.square_button_minimize {
+.square_button_maximize:active,
+.square_button_minimize,
+.square_button_minimize:active {
     z-index:10000;
     background-size: contain;
     height: 100% !important;
@@ -94,14 +97,10 @@
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 3px;
+    padding: 3px 5px;
     font-size: 80%;
     line-height: 70% !important;
     text-align: center;
-
-
-    
-
     font-family: "Chicago Plain";
 }
 
@@ -119,6 +118,7 @@
   /*width: 100%px;*/
   /*height: 100%px;*/
   /*height: calc(100% - 22px);*/
+  overflow: hidden;
   border: 1px solid #000000;
   padding: 10px 15px;
 }
