@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './assets/bootstrap-5.1.3.css';
+import 'bootstrap/dist/css/bootstrap.css';
+// import './assets/bootstrap-5.1.3.css';
 import './assets/jquery-ui-1.13.1.css';
+import './index.css';
 import './assets/desktop.css';
 import './assets/navbar.css'; 
 import './assets/nav_clock.js';

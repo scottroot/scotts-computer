@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import WindowReadme from './Components/WindowReadme';
+import NavBar from './Components/NavBar';
+import Container from 'react-bootstrap/Container';
 
 
 function App() {
   return (
-    <div className="container"><WindowReadme /></div>
+    <Container fluid id="main-wrapper">
+        <NavBar />
+        <WindowReadme />
+    </Container>
           
       
   );
