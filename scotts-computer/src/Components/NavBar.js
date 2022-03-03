@@ -12,10 +12,10 @@ import ReactClock from './ReactClock';
 
 function NavBar(props) {
 	return (
-		<nav className="navbar no-select py-0 px-3">
+		<nav className="navbar no-select py-0 px-3 align-middle overflow-hidden">
         <ul className="nav" id="dropdown-menu">
             <a className="navbar-brand my-0 p-0" href="https://scotts.computer">
-                 <span className="vertical-helper"></span><img src={logo} alt="" width="20" height="20" />
+                 <span className="vertical-helper"></span><img src={logo} alt="" width="20" height="18" />
             </a>
             <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="#">Home</a>
@@ -36,7 +36,7 @@ function NavBar(props) {
         </ul>
 
 
-        <div className="socialLinks d-none d-sm-block">
+        <div className="socialLinks d-none d-md-flex py-0 my-0">
                 <a className="mr-2" href="https://twitter.com/scottz_thoughtz">
                     <span className="vertical-helper social-link"></span><img src={ic_twitter} alt="ic_twitter" height="16px" />
                 </a>
@@ -47,13 +47,13 @@ function NavBar(props) {
                     <span className="vertical-helper"></span><img src={ic_medium} alt="ic_medium" height="16px" />
                 </a>
                 <a className="mr-2">
-                    <span className="vertical-helper"></span><img className="default-pointer nav-div" src={ic_div} alt="ic_div" height="22px" />
+                    <span className="vertical-helper"></span><img className="default-pointer nav-div" src={ic_div} alt="ic_div" />
                 </a>
-                <span className="vertical-helper align-middle"><a className="default-pointer" id="currentTime">
-                <ReactClock />
-                </a></span>
-
-
+                <span className="vertical-helper align-middle">
+                    <a className="default-pointer" id="currentTime">
+                        <ReactClock />
+                    </a>
+                </span>
         </div>
 </nav>
 		)
