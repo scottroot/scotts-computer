@@ -7,6 +7,12 @@
   .window {width: 30%;}
 }*/
 
+.windowShow {
+    display: flex;
+}
+.windowHide {
+    display: none;
+}
 .window {
     position: fixed; 
     margin: 0;
@@ -28,6 +34,20 @@
     /*left: 15%;*/
 }
 
+.window-maximized {
+    width: 60%; 
+    height: 40%;
+    top: 15%; 
+    left: 10%;
+    position: fixed; 
+    margin: 0;
+    background-color: #cccccc;
+    display: none;
+    border: 1px solid #222222;
+    box-shadow: 1px 2px #222222;
+    height: min-content;
+    z-index: 1000;
+}
 .window-header {
     height: 20px !important;
     position: relative;
