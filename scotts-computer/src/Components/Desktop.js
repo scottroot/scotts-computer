@@ -17,7 +17,7 @@ function Desktop(props) {
 	        	</div>
 
 
-	        	<div className="desktop_icons no-select" id="open-browser-window" tabIndex="1">
+	        	<div className="desktop_icons no-select" id="open-browser-window" tabIndex="1" onDoubleClick={props.callbackBrowser}>
 	                <span>
 	                <img src={dt_browser} alt="" height="50px" />
 	            	<p>Browser</p>
@@ -25,7 +25,7 @@ function Desktop(props) {
 	        	</div>
 
 
-	        	<div className="desktop_icons no-select" id="open-readme-window" tabIndex="2" onDoubleClick={props.callback}>
+	        	<div className="desktop_icons no-select" id="open-readme-window" tabIndex="2" onDoubleClick={props.callbackWindow}>
 	                <span>
 	                	<img src={dt_readme} alt="" height="50px" />
 	            		<p>ReadMe</p>

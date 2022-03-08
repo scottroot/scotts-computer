@@ -6,7 +6,7 @@ import Draggable from 'react-draggable';
 function NewWindow(props) {
     const [minimize, setMinimize] = useState(false)
     const [windowStyle, setWindowStyle] = useState("window")
-
+    console.log("window.js " + props.currentZHeight)
     const closeWindow = () => {
         props.callback(); 
         setMinimize(false);
@@ -18,17 +18,25 @@ function NewWindow(props) {
 
     const maximizeWindow = () => {
         {windowStyle=="window" ? setWindowStyle("window-maximized") : setWindowStyle("window")};
+        setMinimize(false);
     }
 
+    const [height, setHeight] = useState(1)
+    const onClickWindows = () => {
+        setHeight(props.topZ);
+        props.callbackTopZ();
+    };
+    
+    
     const nodeRef = React.useRef(null);
-    return (       
-
+    return (      
                 <Draggable nodeRef={nodeRef}
                     handle="#window-handle"
                     bounds="parent"
                     cancel=".winbtn"
+                    onMouseDown={onClickWindows}
                     >                    
-                    <div className={windowStyle + " d-flex vstack"} id="window" ref={nodeRef}>
+                    <div className={windowStyle + " d-flex vstack"} id="window" ref={nodeRef} style={{zIndex: height}}>
                         <div className="window-header d-flex" id="window-handle">
                             <div className="square_button winbtn" id="window-close" onClick={closeWindow}></div>
                             <div className='window-header-center flex-grow-1 mx-1'></div>
@@ -51,7 +59,6 @@ function NewWindow(props) {
                         }
                     </div>
                 </Draggable>
-
       );
     }
 
