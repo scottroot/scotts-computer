@@ -50,7 +50,7 @@ function NewWindow(props) {
                         </div>
                         {!minimize &&
                             <div className="window-content" id="window-content">
-                                <div className="window-content-body">
+                                <div className="window-content-body" id={props.id}>
                                     <span className="d-md-block">
                                         {props.windowBody}
                                     </span> 

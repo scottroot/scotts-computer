@@ -154,3 +154,40 @@
     line-height: 150%;
     font-size: 1.5rem;
 }
+
+#browser-window {
+    padding: 0px !important;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+/* width */
+#browser-window::-webkit-scrollbar {
+  width: 15px;
+  border-left: 1px solid #262626;
+}
+
+/* Track */
+#browser-window::-webkit-scrollbar-track {
+  background: #aaaaaa;
+  border-left: 1px solid #262626;
+}
+
+/* Handle */
+#browser-window::-webkit-scrollbar-thumb {
+    background: #9999ff;
+    box-shadow: inset 3px 2px 1px rgba(184,184,255,.5);
+    border-right: 3px solid rgba(0,0,0,.05);
+    border-bottom: 1px solid rgba(0,0,0,.01);
+    border-left: 1px solid #262626;
+    box-sizing: border-box;
+}
+
+/* Handle on hover */
+#browser-window::-webkit-scrollbar-thumb:hover {
+  background: #6666cc;
+  border-left: 1px solid #262626;
+  box-shadow: inset 1px 1px rgba(184,184,255,.3);
+  border-right: 1px solid rgba(0,0,0,.2);
+  border-bottom: 2px solid rgba(0,0,0,.2);
+}

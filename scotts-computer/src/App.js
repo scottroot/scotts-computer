@@ -5,8 +5,12 @@ import NavBar from './Components/NavBar';
 import Container from 'react-bootstrap/Container';
 import Desktop from './Components/Desktop';
 import NewWindow from './Components/Window';
+import Browser from './Components/Browser';
+import { Timeline } from 'react-twitter-widgets';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
-var zHelper = 9000;
+
+
 function App (){
     const [readmeVisibility, setReadmeVisibility] = useState(true);
     const callbackHideWindow = () =>  setReadmeVisibility(false);
@@ -42,11 +46,17 @@ function App (){
                     callback={callbackHideBrowser}
                     callbackTopZ={callbackTopZ}
                     topZ={height}
+                    id="browser-window"
                     windowTitle="Browser"
-                    windowBody=<div><h1>browser test</h1></div>
+                    windowBody=<TwitterTimelineEmbed
+                                  sourceType="profile"
+                                  screenName="scottz_thoughtz"
+                                  options={{width:600, id:"profile:scottz_thoughtz"}}
+                                  noHeader
+                                  noFooter
+                                />
                 />
             }
-
         </Container>
           
       

@@ -1,0 +1,6 @@
+.timeline-Footer, 
+.timeline-Widget footer,
+.u-cf footer,
+footer {
+	display: none !important;
+}
