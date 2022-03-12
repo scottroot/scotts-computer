@@ -37,7 +37,7 @@ function NewWindow(props) {
                     onMouseDown={onClickWindows}
                     >                    
                     <div className={windowStyle + " d-flex vstack"} id="window" ref={nodeRef} style={{zIndex: height}}>
-                        <div className="window-header d-flex" id="window-handle">
+                        <div className="window-header d-flex" id="window-handle" onDoubleClick={()=>{windowStyle=="window" ? setWindowStyle("window-maximized") : setWindowStyle("window")}}>
                             <div className="square_button winbtn" id="window-close" onClick={closeWindow}></div>
                             <div className='window-header-center flex-grow-1 mx-1'></div>
                             <div className="square_button_maximize winbtn d-block pr-5" id="window-max" onClick={maximizeWindow}></div>

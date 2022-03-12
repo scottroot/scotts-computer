@@ -35,18 +35,27 @@
 }
 
 .window-maximized {
-    width: 60%; 
-    height: 40%;
-    top: 15%; 
-    left: 10%;
+    /*width: 60%; */
+    /*height: 40%;*/
+    height: calc(100% - 26px) !important;
+    /*top: 15%; */
+    /*left: 10%;*/
     position: fixed; 
-    margin: 0;
+    /*margin: auto;*/
+    /*height: calc(100% - 24px);*/
     background-color: #cccccc;
-    display: none;
+    /*display: none;*/
     border: 1px solid #222222;
     box-shadow: 1px 2px #222222;
-    height: min-content;
+    /*height: min-content;*/
     /*z-index: 1000;*/
+}
+.window-maximized .window-content-body,
+.window-maximized .window-content {
+    height: 100%;
+}
+.window-maximized .window-content-body {
+    padding: 2.5% 4%;
 }
 .window-header {
     height: 20px !important;
@@ -153,6 +162,12 @@
 .window-content-body p {
     line-height: 150%;
     font-size: 1.5rem;
+}
+
+#charts-window {
+    padding: 0px !important;
+    overflow-y: scroll;
+    height: 600px;
 }
 
 #browser-window {

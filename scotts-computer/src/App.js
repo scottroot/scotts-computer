@@ -6,9 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Desktop from './Components/Desktop';
 import NewWindow from './Components/Window';
 import Browser from './Components/Browser';
+import Charts from './Components/Charts';
 import { Timeline } from 'react-twitter-widgets';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
 
 
 function App (){
@@ -20,6 +20,10 @@ function App (){
     const callbackHideBrowser = () =>  setBrowserVisibility(false);
     const callbackShowBrowser = () => setBrowserVisibility(true)
 
+    const [chartsVisibility, setChartsVisibility] = useState(false);
+    const callbackHideCharts = () =>  setChartsVisibility(false);
+    const callbackShowCharts = () => setChartsVisibility(true)
+
     const [height, setHeight] = useState(1);
     const callbackTopZ = () => {
         setHeight(height+1);
@@ -29,7 +33,11 @@ function App (){
 
             <NavBar /> 
 
-            <Desktop id="main-wrapper" callbackWindow={callbackShowWindow} callbackBrowser={callbackShowBrowser} height={height}/>
+            <Desktop id="main-wrapper" 
+                callbackWindow={callbackShowWindow} 
+                callbackBrowser={callbackShowBrowser} 
+                callbackCharts={callbackShowCharts}
+                height={height}/>
 
             {readmeVisibility && 
                 <NewWindow 
@@ -55,6 +63,17 @@ function App (){
                                   noHeader
                                   noFooter
                                 />
+                />
+            }
+
+            {chartsVisibility && 
+                <NewWindow 
+                    callback={callbackHideCharts}
+                    callbackTopZ={callbackTopZ}
+                    topZ={height}
+                    id="charts-window"
+                    windowTitle="Charts"
+                    windowBody=<Charts />
                 />
             }
         </Container>
