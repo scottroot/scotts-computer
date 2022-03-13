@@ -167,7 +167,22 @@
 #charts-window {
     padding: 0px !important;
     overflow-y: scroll;
-    height: 600px;
+    /*height: 600px !important;*/
+    height: min-content;
+}
+
+
+#charts-window span {
+    height:  auto;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+}
+
+#charts-window canvas {
+    /*height: 900px;*/
+    width: 100%;
+    margin: auto;
 }
 
 #browser-window {

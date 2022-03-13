@@ -2,7 +2,7 @@ import './Desktop.css';
 import dt_contact from '../img/dt_contact.png';
 import dt_browser from '../img/dt_browser.png';
 import dt_readme from '../img/dt_readme.png';
-
+import dt_charts from '../img/dt_charts.png';
 
 
 
@@ -31,6 +31,14 @@ function Desktop(props) {
 	            		<p>ReadMe</p>
 	            	</span>
 	        	</div>
+
+	        	<div className="desktop_icons no-select" id="open-charts-window" tabIndex="3" onDoubleClick={props.callbackCharts}>
+	                <span>
+	                	<img src={dt_charts} alt="" height="50px" />
+	            		<p>Charts</p>
+	            	</span>
+	        	</div>
+
         	</div>
 
 		)}

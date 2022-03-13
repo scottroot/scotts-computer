@@ -50,11 +50,12 @@ def get_data(url="", name="", headers="", cookiefile="", params=""):
     df.dropna()
     df.drop('UnixTimeStamp', inplace=True, axis=1)
     df.rename(columns = {"Value":name}, inplace=True)
+    df.rename(columns = {"Date(UTC)":"DateUTC"}, inplace=True)
     last_week = datetime.datetime.now() - datetime.timedelta(days=7)
 
-    df['Date(UTC)'] = pd.to_datetime(df['Date(UTC)'])
-    df["Date(UTC)"] = pd.DatetimeIndex(df['Date(UTC)'])
-    df.set_index('Date(UTC)', inplace=True, drop=True)
+    df['DateUTC'] = pd.to_datetime(df['DateUTC'])
+    df["DateUTC"] = pd.DatetimeIndex(df['DateUTC'])
+    df.set_index('DateUTC', inplace=True, drop=True)
 
     df = df[df.index >= last_week]    
     return df
@@ -72,4 +73,5 @@ def get_all_evm():
 
 
 df = get_all_evm()
+print(df)
 df.to_csv("daily_tx.csv")
