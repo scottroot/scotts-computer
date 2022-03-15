@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dbe90e86.css",
+    "main.js": "/static/js/main.fe4c79a0.js",
+    "static/js/787.e386eea1.chunk.js": "/static/js/787.e386eea1.chunk.js",
+    "static/media/Chicago.woff": "/static/media/Chicago.4b7dabec2befe7b7f54a.woff",
+    "static/media/dt_charts.png": "/static/media/dt_charts.a42412dbd549ed788e5f.png",
+    "static/media/dt_browser.png": "/static/media/dt_browser.0b8e89ef7bde974c05ca.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "static/media/daily_tx.csv": "/static/media/daily_tx.ae228f6a82960ead9ab8.csv",
+    "main.dbe90e86.css.map": "/static/css/main.dbe90e86.css.map",
+    "main.fe4c79a0.js.map": "/static/js/main.fe4c79a0.js.map",
+    "787.e386eea1.chunk.js.map": "/static/js/787.e386eea1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbe90e86.css",
+    "static/js/main.fe4c79a0.js"
+  ]
+}
