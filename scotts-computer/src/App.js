@@ -12,6 +12,10 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 
 function App (){
+    const [contactVisibility, setContactVisibility] = useState(false);
+    const callbackHideContact = () =>  setContactVisibility(false);
+    const callbackShowContact = () => setContactVisibility(true)
+
     const [readmeVisibility, setReadmeVisibility] = useState(true);
     const callbackHideWindow = () =>  setReadmeVisibility(false);
     const callbackShowWindow = () => setReadmeVisibility(true)
@@ -37,7 +41,18 @@ function App (){
                 callbackWindow={callbackShowWindow} 
                 callbackBrowser={callbackShowBrowser} 
                 callbackCharts={callbackShowCharts}
+                callbackContact={callbackShowContact}
                 height={height}/>
+
+            {contactVisibility && 
+                <NewWindow 
+                    callback={callbackHideContact}
+                    callbackTopZ={callbackTopZ}
+                    topZ={height}
+                    windowTitle="Contact"
+                    windowBody=<div><h1>Contact Me</h1><p>@scottz_thoughtz</p><p>@scottz_thoughtz</p></div>
+                />
+            }
 
             {readmeVisibility && 
                 <NewWindow 

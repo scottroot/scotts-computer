@@ -9,7 +9,7 @@ import dt_charts from '../img/dt_charts.png';
 function Desktop(props) {
 		return (
 			<div className="desktop flex-column" > 
-	        	<div className="desktop_icons no-select" id="open-browser-window" tabIndex="0" onDoubleClick={props.callbackCharts}>
+	        	<div className="desktop_icons no-select" id="open-contact-window" tabIndex="0" onDoubleClick={props.callbackContact}>
 	        		<span>
 	                	<img src={dt_contact} alt="" height="50px" />
 	            		<p>Contact</p>
