@@ -1,0 +1,42 @@
+.charts-window-main {
+/*    width: 80vw;
+    height: 50vh !important;*/
+    /*width: 600px;*/
+	/*height: 500px;*/
+}
+
+#charts-window {
+    /*padding: 0px !important;*/
+    overflow-y: scroll;
+}
+#charts-window span {
+	width: 100%;
+	max-height: 100%;
+	position: relative;
+    /*margin-left: 5%;*/
+    /*margin-right: 5%;*/
+    /*width: 50%;*/
+    /*padding: 20px;*/
+}
+.chart-container {
+	position: relative;
+	width: 100%;
+	height: 90%;
+	min-height: 400px;
+}
+
+
+/*.window-maximized.chart-container {
+	height: 100%;
+	width: 100%;
+}
+*/
+
+
+
+
+
+/*.window-maximized #charts-window span {
+    width: 90% !important;
+    height: 800px !important;
+}*/

@@ -45,7 +45,7 @@ function App (){
                     callbackTopZ={callbackTopZ}
                     topZ={height}
                     windowTitle="ReadMe"
-                    windowBody=<div><h1>About Me</h1><p>I work as a technology consultant and in my part time like to develop web projects. Lately  these projects have been web based, as I have been studying various Web3 libraries and plan to begin working on a tool for use with the Arweave blockchain.</p></div>
+                    windowBody=<div><h1>About Me</h1><p>I work as a technology consultant and in my part time work on development projects. Lately these projects have been web based with ReactJS to get more familiar with the many Web3 libraries available. Future plans include a POA usecase built on top of the Arweave blockchain.</p></div>
                 />
             }
 
@@ -72,6 +72,7 @@ function App (){
                     callbackTopZ={callbackTopZ}
                     topZ={height}
                     id="charts-window"
+                    classMain="charts-window-main"
                     windowTitle="Charts"
                     windowBody=<Charts />
                 />

@@ -3,6 +3,7 @@ import Axios from "axios";
 import { usePapaParse } from 'react-papaparse';
 import { Line } from "react-chartjs-2";
 import myData from './helpers/daily_tx.csv';
+import './Charts.css';
 
 import {
 Chart as ChartJS,
@@ -11,6 +12,7 @@ LinearScale,
 PointElement,
 LineElement,
 Title,
+plugins,
 Tooltip,
 Legend,
 } from 'chart.js';
@@ -21,6 +23,7 @@ LinearScale,
 PointElement,
 LineElement,
 Title,
+plugins,
 Tooltip,
 Legend
 );
@@ -126,12 +129,37 @@ function Charts() {
 	  	]
 	};
 
-
+	const chartOptions = {
+		maintainAspectRatio: false,
+		responsive: true,
+		plugins: {
+			title: {
+                display: true,
+                text: "EVM Daily TX Volume",
+                color: "#212529",
+                font: {
+                	family: "BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+                	size: "40px",
+                	weight: "500"
+                }
+            },
+            subtitle: {
+                display: true,
+                text: ["","scotts.computer", "Source: etherscan, bscscan, ftmscan, polygonscan, hecoscan, optimistic.etherscan"],
+                position: "bottom",
+                align: "center",
+                font: {
+                	family: "BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+                	color: "#212529",
+	                },
+	            },
+    	},
+	}
 
   	return (
 	  	<>
-	  		<h3 className="text-center">EVM Daily TX Volume</h3>
-	  		<Line data={data} height="400px" />
+	  		
+	  		<div class="chart-container"><Line data={data} options={chartOptions} /></div>
 
   		</>
 	)
