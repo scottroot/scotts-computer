@@ -51,7 +51,7 @@ def get_data(url="", name="", headers="", cookiefile="", params=""):
     df.drop('UnixTimeStamp', inplace=True, axis=1)
     df.rename(columns = {"Value":name}, inplace=True)
     df.rename(columns = {"Date(UTC)":"DateUTC"}, inplace=True)
-    last_week = datetime.datetime.now() - datetime.timedelta(days=7)
+    last_week = datetime.datetime.now() - datetime.timedelta(days=8)
 
     df['DateUTC'] = pd.to_datetime(df['DateUTC'])
     df["DateUTC"] = pd.DatetimeIndex(df['DateUTC'])
